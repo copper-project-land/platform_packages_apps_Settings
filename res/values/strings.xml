@@ -8986,4 +8986,7 @@
 
     <!-- The divider symbol between different parts of the notification header including spaces. not translatable [CHAR LIMIT=3] -->
     <string name="notification_header_divider_symbol_with_spaces" translatable="false">" • "</string>
+
+    <string name="deny_new_usb_title">USB accessories</string>
+    <string name="deny_new_usb_summary">Control support for USB peripherals such as input (mice, keyboards, joysticks) and storage devices.</string>
 </resources>
