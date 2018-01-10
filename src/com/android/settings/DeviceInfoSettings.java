@@ -139,11 +139,8 @@ public class DeviceInfoSettings extends DashboardFragment implements Indexable {
         controllers.add(new FccEquipmentIdPreferenceController(context));
         controllers.add(new SELinuxStatusPreferenceController(context));
         controllers.add(new SafetyInfoPreferenceController(context));
-<<<<<<< HEAD
         controllers.add(new VerifiedBootStatusPreferenceController(context));
-=======
         controllers.add(new VendorVersionPreferenceController(context));
->>>>>>> 25a0ee0... Dynamically define currently installed vendor.img version
         return controllers;
     }
 
