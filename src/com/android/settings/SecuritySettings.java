@@ -664,10 +664,10 @@ public class SecuritySettings extends SettingsPreferenceFragment
                     Settings.System.TEXT_SHOW_PASSWORD, 1) != 0);
         }
 
-        if (mScramblePinLayout != null) {
+        /*if (mScramblePinLayout != null) {
             mScramblePinLayout.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.SCRAMBLE_PIN_LAYOUT, 0) != 0);
-        }
+        }*/
 
         mLocationcontroller.updateSummary();
 
@@ -868,9 +868,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
                     ((Boolean) value) ? 1 : 0);
             lockPatternUtils.setVisiblePasswordEnabled((Boolean) value, MY_USER_ID);
-        } else if (KEY_SCRAMBLE_PIN_LAYOUT.equals(key)) {
-            Settings.System.putInt(getContentResolver(), Settings.System.SCRAMBLE_PIN_LAYOUT,
-                    ((Boolean) value) ? 1 : 0);
         } else if (KEY_DENY_NEW_USB.equals(key)) {
             String mode = (String) value;
             SystemProperties.set(DENY_NEW_USB_PERSIST_PROP, mode);

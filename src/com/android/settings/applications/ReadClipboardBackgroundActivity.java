@@ -118,8 +118,6 @@ public class ReadClipboardBackgroundActivity extends SettingsPreferenceFragment 
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
                     boolean switchOn = (Boolean) newValue;
-                    mAppOpsManager.setMode(AppOpsManager.OP_READ_CLIPBOARD_BACKGROUND, getPackageUid(pkg), pkg,
-                            switchOn ? AppOpsManager.MODE_ALLOWED : AppOpsManager.MODE_IGNORED);
                     pref.setChecked(switchOn);
                     return false;
                 }
@@ -129,14 +127,7 @@ public class ReadClipboardBackgroundActivity extends SettingsPreferenceFragment 
     }
 
     public void updateState(SwitchPreference preference, String pkg) {
-        final int mode = mAppOpsManager
-                .checkOpNoThrow(AppOpsManager.OP_READ_CLIPBOARD_BACKGROUND, getPackageUid(pkg), pkg);
-        if (mode == AppOpsManager.MODE_ERRORED) {
             preference.setChecked(false);
-        } else {
-            final boolean checked = mode != AppOpsManager.MODE_IGNORED;
-            preference.setChecked(checked);
-        }
     }
 
     private int getPackageUid(String pkg) {
